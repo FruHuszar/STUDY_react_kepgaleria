@@ -1,0 +1,154 @@
+:root {
+  --font: #1a1a1a;
+  --bg: #ffffff;
+  --active: #722f37;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: var(--bg);
+  background-color: var(--active);
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  color: var(--font);
+  background: var(--bg);
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+
+.nagy-kep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.nagy-kep img {
+  width: 500px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.nagy-kep button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--active);
+  color: var(--bg);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nagy-kep button:hover {
+  opacity: 0.85;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.kiskep {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.kiskep:hover {
+  border-color: var(--active);
+}
+
+footer {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  #root {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nagy-kep {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .nagy-kep > div {
+    order: 1;
+    width: 100%;
+  }
+
+  .nagy-kep button {
+    order: 2;
+  }
+
+  .nagy-kep img {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .kiskep {
+    width: 100%;
+    height: 70px;
+  }
+}
