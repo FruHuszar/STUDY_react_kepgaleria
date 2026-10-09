@@ -1,12 +1,10 @@
-import type { Kep } from "../adatok";
+import { useKepContext } from "../contexts/KepContext";
+import { KEPLISTA } from "../adatok";
 
-interface NagyKepProps {
-  kep: Kep;
-  elozo: () => void;
-  kovetkezo: () => void;
-}
+export default function Nagykep() {
+  const { aktualisIndex, elozo, kovetkezo } = useKepContext();
+  const kep = KEPLISTA[aktualisIndex];
 
-export default function Nagykep({ kep, elozo, kovetkezo }: NagyKepProps) {
   return (
     <div className="nagy-kep">
       <button onClick={elozo}>←</button>
